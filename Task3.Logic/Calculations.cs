@@ -4,11 +4,17 @@ namespace Task3.Logic
 {
     public class Calculations
     {
+
+
+        /// <summary>
+        /// Calculate root of the number
+        /// </summary>
+        /// <param name="source">Source number</param>
+        /// <param name="power">Root power</param>
+        /// <param name="precision">Acceptable precision</param>
+        /// <returns>Root of the source with acceptable precision</returns>
         public static double SqrtNewton(double source, double power, double precision)
         {
-            if ((power == null) || (source == null) || (precision == null))
-                throw new ArgumentNullException();
-
             if (power < 0)
                 throw new ArgumentOutOfRangeException();
 
@@ -18,24 +24,9 @@ namespace Task3.Logic
             if (power == 1)
                 return source;
 
-            if (precision == null)
-                throw new ArgumentNullException();
-
             double currentApprox, currentApproxPrev;
 
             currentApprox = source / 2;
-
-            //while (true)
-            //{
-            //    double f = currentApprox * currentApprox - source;
-
-            //    if (Math.Abs(f) < precision)
-            //        break;
-
-            //    double dx = -f / (power * currentApprox);
-            //    currentApprox += dx;
-            //}
-
 
             do
             {
